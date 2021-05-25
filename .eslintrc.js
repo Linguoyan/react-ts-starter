@@ -23,6 +23,14 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.tsx', '.ts', '.js', '.json'],
+      },
+      typescript: {},
+    },
+  },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     semi: WARN,
@@ -38,10 +46,15 @@ module.exports = {
         js: 'never',
       },
     ],
-
     'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
+    'import/no-dynamic-require': OFF,
+    'import/no-unresolved': ERROR,
 
     '@typescript-eslint/no-var-requires': OFF,
+
+    'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
+    'global-require': OFF,
+    'no-use-before-define': OFF,
     'prettier/prettier': WARN,
   },
 };
