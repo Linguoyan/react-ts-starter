@@ -38,5 +38,10 @@ module.exports = {
         js: 'never',
       },
     ],
+
+    'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
+
+    '@typescript-eslint/no-var-requires': OFF,
+    'prettier/prettier': WARN,
   },
 };
